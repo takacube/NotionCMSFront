@@ -1,13 +1,18 @@
+import { useRouter } from 'next/router'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import MultiActionAreaCard from '../components/blogCard'
-import BlogCardList from '../components/blogCardList'
-import Header from '../components/header'
-import styles from '../styles/Home.module.css'
+import MultiActionAreaCard from '../../components/blogCard'
+import BlogCardList from '../../components/blogCardList'
+import Header from '../../components/header'
+import styles from '../../styles/Home.module.css'
 
-const Home: NextPage = () => {
-  return (
+export const Blog = ()=> {
+    const router = useRouter()
+    const { id } = router.query
+    // fecth blog data from id;
+    // fetch comment from id;
+    return (
     <div className={styles.container}>
       <Head>
         <title>Takk blog</title>
@@ -19,16 +24,7 @@ const Home: NextPage = () => {
       </div>
       
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to Takk Blog
-        </h1>
-        <div>
-          <BlogCardList></BlogCardList>
-        </div>
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
+        {id}
       </main>
       
       <footer className={styles.footer}>
@@ -47,4 +43,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Blog;
