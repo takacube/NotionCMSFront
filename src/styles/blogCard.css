@@ -1,0 +1,19 @@
+.cardList {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.blogCard {
+    padding: 6%;
+    width: 50%;
+    min-height: 100px;
+}
+
+.card {
+    margin: 0px 10px 40px 10px;
+}
+
+.cardHeader {
+    text-align: center;
+    font-size: 60px;
+}
