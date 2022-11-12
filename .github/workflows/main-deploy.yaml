@@ -18,7 +18,11 @@ jobs:
           node-version: '16'
 
       - name: Install Dependencies
-        run: cd src && npm install
+        run: |
+        cd src
+        rm package-lock.json
+        npm config set legacy-peer-deps true
+        npm install
 
       - name: Build
         run: cd src && npm run build
@@ -29,4 +33,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
         run: |
           echo "AWS s3 sync"
-          aws s3 sync --region ap-northeast-1 ./out s3://${{ secrets.AWS_S3_BUCKET}} --delete
+          aws s3 sync --region ap-northeast-1 .src/out s3://${{ secrets.AWS_S3_BUCKET}} --delete
