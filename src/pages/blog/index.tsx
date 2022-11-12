@@ -1,17 +1,19 @@
 import { useRouter } from 'next/router'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import MultiActionAreaCard from '../../components/blogCard'
 import BlogCardList from '../../components/blogCardList'
 import Header from '../../components/header'
 import styles from '../../styles/Home.module.css'
+import { BlogPage } from '../../components/blogPage'
 
 export const Blog = ()=> {
-    const router = useRouter()
-    const { id } = router.query
-    // fecth blog data from id;
-    // fetch comment from id;
+    const router = useRouter();
+    const { id } = router.query;
+    console.log(id)
+    console.log("idddddd");
+    const stringifiedId = (id?.length == 0 || id == undefined)? (<div>a</div>) : (<BlogPage id={id.toString()}></BlogPage>)
+    console.log(stringifiedId);
     return (
     <div className={styles.container}>
       <Head>
@@ -24,7 +26,7 @@ export const Blog = ()=> {
       </div>
       
       <main className={styles.main}>
-        {id}
+        <div>{stringifiedId}</div>
       </main>
       
       <footer className={styles.footer}>
@@ -35,7 +37,6 @@ export const Blog = ()=> {
         >
           Powered by{' '}
           <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>

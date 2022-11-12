@@ -8,6 +8,14 @@
     width: 50%;
     min-height: 100px;
 }
+@media screen and (max-width:900px){
+    .blogCard {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 10px auto;
+    }
+}
 
 .card {
     margin: 0px 10px 40px 10px;
@@ -16,4 +24,15 @@
 .cardHeader {
     text-align: center;
     font-size: 60px;
+}
+
+.blogPage {
+    max-width: 420px;
+    width: 350px;
+    min-width: 350px;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(240, 239, 239);
+    border-radius: 20px;
+    white-space: pre-line;
 }
