@@ -25,7 +25,11 @@ jobs:
           npm install
 
       - name: Build
-        run: cd src && npm run build
+        run: |
+          cd src 
+          backend_url="${{ secrets.BACKEND_URL }}"
+          echo "NEXT_PUBLIC_BACKEND_URL=\"$backend_url\"" > .env.local
+          npm run build
 
       - name: Deploy
         env:
