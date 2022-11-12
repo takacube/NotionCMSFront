@@ -19,10 +19,10 @@ jobs:
 
       - name: Install Dependencies
         run: |
-        cd src
-        rm package-lock.json
-        npm config set legacy-peer-deps true
-        npm install
+          cd src
+          rm package-lock.json
+          npm config set legacy-peer-deps true
+          npm install
 
       - name: Build
         run: cd src && npm run build
