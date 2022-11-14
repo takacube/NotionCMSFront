@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import MultiActionAreaCard from '../components/blogCard'
 import BlogCardList from '../components/blogCardList'
 import Header from '../components/header'
 import styles from '../styles/Home.module.css'
